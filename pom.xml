@@ -8,5 +8,9 @@
     <artifactId>SpringCloud2020Demo</artifactId>
     <version>1.0</version>
 
+    <dependencyManagement>
+
+    </dependencyManagement>
+
 
 </project>
