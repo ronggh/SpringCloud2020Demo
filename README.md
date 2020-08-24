@@ -17,5 +17,16 @@
     service,服务层的方法
     controller,控制层的方法
     mapper,继承BasedMapper<>的接口,实现数据库的操作
+## 3. 创建一个服务提供模块 cloud-consume-order-8002
+## 4. 工程重构，将公共代码抽取到一个公共模块中 cloud-common
+    1、创建一个新模块 cloud-common
+    2、将上两个模块公用的代码块移到该模块
+    3、修改上两个模块的pom.xml，依赖这个公共包
+## 5. 使用Eureka作为注册服务中心 
+    1、创建一个新模块cloud-eureka-server-7001
+    2、改造cloud-provider-payment-8001,可以注册到Eureka
+    3、改造cloud-consume-order-8002，可以注册到Eureka
+
+    
     
 

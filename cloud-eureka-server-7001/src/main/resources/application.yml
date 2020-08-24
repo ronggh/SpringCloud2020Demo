@@ -1,0 +1,14 @@
+server:
+  port: 7001
+
+# Eureka 的设置
+eureka:
+  client:
+    # 不向注册中心注册自己
+    register-with-eureke: false
+    # 自己就是注册中心，不进行检索服务
+    fetch-registry: false
+    server-url:
+      # 设置与Eureka交互的地址
+      defaultZone: http://localhost:${server.port}/eureka
+
