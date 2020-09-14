@@ -11,4 +11,10 @@ eureka:
     server-url:
       # 设置与Eureka交互的地址
       defaultZone: http://localhost:${server.port}/eureka
-
+  server:
+    # 自我保护机制,默认是true,即发现微服务暂时不可用时，不会从注册中心删除
+    # 因为，可能是网络等原因，微服务本身是可用的，这种设计称为Eureka的自我保护
+    # 设置为false则关闭，发现服务不可用，立即进行清除
+    enable-self-preservation: false
+    # 设置心跳链接毫秒数
+    eviction-interval-timer-in-ms: 2000

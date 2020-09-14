@@ -17,6 +17,13 @@
         <module>cloud-consume-order-8002</module>
         <module>cloud-common</module>
         <module>cloud-eureka-server-7001</module>
+        <module>cloud-provider-payment-zk-8004</module>
+        <module>cloud-provider-payment-consul-8006</module>
+        <module>cloud-consume-order-consul-9006</module>
+        <module>cloud-consume-order-feign-9007</module>
+        <module>cloud-alibaba-provider-payment-9001</module>
+        <module>cloud-alibaba-consume-order-10001</module>
+        <module>cloud-alibaba-config-nacos-11001</module>
     </modules>
 
     <!-- 统一管理版本 -->

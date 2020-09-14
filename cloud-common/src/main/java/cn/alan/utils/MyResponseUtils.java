@@ -10,4 +10,9 @@ public class MyResponseUtils {
 
         return new MyResponseResult<T>(200, "success", data);
     }
+
+    public static <T> MyResponseResult returnSuccess(Integer code, String msg, T data) {
+
+        return new MyResponseResult<T>(code, msg, data);
+    }
 }

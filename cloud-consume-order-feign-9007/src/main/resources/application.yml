@@ -1,0 +1,15 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: cloud-consume-order-feign-9007
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+logging:
+  level:
+    # Feign的日志以什么级别，监控哪个接口
+    cn.alan.service.PaymentFeignService: debug
