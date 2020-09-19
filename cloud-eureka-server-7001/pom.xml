@@ -26,28 +26,23 @@
 
         </dependency>
 
-
-        <!-- spring boot web -->
-        <dependency>
-            <groupId>org.spring.framework</groupId>
-            <artifactId>spring-boot-start-web</artifactId>
-        </dependency>
-        <!-- spring boot 性能监控 -->
-        <dependency>
-            <groupId>org.spring.framework</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!-- spring boot test-->
-        <dependency>
-            <groupId>org.spring.framework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-
         <!-- spring boot web,注意 groupId 不同-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- spring boot 性能监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- spring boot test-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+
         <!-- lombok注解.setter/getter等 -->
         <dependency>
             <groupId>org.projectlombok</groupId>

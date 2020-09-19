@@ -24,6 +24,7 @@
         <module>cloud-alibaba-provider-payment-9001</module>
         <module>cloud-alibaba-consume-order-10001</module>
         <module>cloud-alibaba-config-nacos-11001</module>
+        <module>cloud-config-center-3344</module>
     </modules>
 
     <!-- 统一管理版本 -->
@@ -36,7 +37,6 @@
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.16</druid.version>
-        <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
         <swagger.version>2.0.3</swagger.version>
     </properties>
 
@@ -83,10 +83,11 @@
                 <version>${druid.version}</version>
             </dependency>
             <!-- mybatis -->
+            <!-- mybatis-plus begin -->
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.version}</version>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.3.1</version>
             </dependency>
             <!--swagger相关依赖包-->
             <dependency>
