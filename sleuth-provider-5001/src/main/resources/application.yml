@@ -1,0 +1,13 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: sleuth-provider
+  # zipkin 地址
+  zipkin:
+    base-url: http://localhost:9411
+  # sleuth
+  sleuth:
+    # 采样率，在0-1之间，一般可用0.5 ,1表示全部采样
+    sampler:
+      probability: 1

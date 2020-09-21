@@ -7,15 +7,17 @@ spring:
     config:
       server:
         git:
-          # 在git仓库上的名称
-          uri: git@https://github.com/ronggh/spring-cloud-config-center.git
+          # 在git仓库上的名称 https://github.com/ronggh/spring-cloud-config-center.git
+          # 使用第一种方式会访问不到git
+          #uri: git@https://github.com/ronggh/spring-cloud-config-center.git
+          uri: https://github.com/ronggh/spring-cloud-config-center.git
           # 搜索目录
           search-paths:
             - spring-cloud-config-center
       # 读取分支
       label: master
 # 服务注册到Eureka
-eukera:
-  client:
-    service-url:
-      default-zone: http://localhost:7001/eureka
+#eukera:
+#  client:
+#    service-url:
+#      default-zone: http://localhost:7001/eureka

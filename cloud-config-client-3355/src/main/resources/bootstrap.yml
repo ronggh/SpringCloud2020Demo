@@ -1,0 +1,24 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      # master分支
+      label: master
+      # 配置文件前缀名称
+      name: config
+      # 配置文件后缀名称，即在ｍaster分支下读取config-dev.yml文件
+      profile: dev
+      # 配置中心地址，即客户端的微服务（本程序）会访问
+      # http://localhost:3344/master/config-dev.yml来获取配置信息
+      # 3344是配置中心的服务端，会从github获取配置
+      uri: http://localhost:3344
+
+# 暴露监控端点，可以被spring-boot-starter-actuator监控到变化
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
