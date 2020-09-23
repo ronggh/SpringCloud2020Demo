@@ -4,7 +4,6 @@ spring:
   application:
     name: zuul-9200
 
-
 # 把微服务注册到Eureka上
 eureka:
   client:
@@ -21,3 +20,23 @@ eureka:
     lease-renewal-interval-in-seconds: 1
     # Eureka服务端最后一次接收到心跳的最大间隔，默认90秒，超时将删除该服务
     lease-expiration-duration-in-seconds: 2
+
+# 配置路由映射规则
+zuul:
+  # 可以指定一个公共的前缀，如统一加一个 /api,可以不要
+  prefix: /api
+  # 忽略原用微服务名方式的访问,如果是多个可以用" *" 来代替
+  ignored-services: cloud-payment-service
+  #ignored-services: "*"
+
+  # 路由配置
+  routes:
+    # 指定一个唯一的名称，一般可以用要进行路由的微服务的名称
+    payment-service:
+      # 这个属性指定微服务的名字，要跟注册到Eureka中的一致
+      service-id: cloud-payment-service
+      # 指定路由路径
+      path: /payment-api/**
+
+
+
