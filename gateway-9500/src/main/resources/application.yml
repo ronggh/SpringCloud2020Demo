@@ -1,0 +1,55 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    # 路由配置
+    gateway:
+      # 开启通过微服务名称方式进行路由
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # 路由的Id，没有特殊要求，只要唯一即可，一般与服务名一致，便于区分
+        - id: payment_router1
+          # 要路由的IP地址，如果都注册到了服务中心，可以使用微服务名称
+          #uri: http://localhost:8001
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          # 断言，
+          predicates:
+            # 指定路径匹配，则进行路由
+            - Path=/payment/get/**
+        - id: payment_router2
+          #uri: http://localhost:8001
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/payment/lb/**
+            #- After=2020-09-23T14:19:34.102+08:00[Asia/Shanghai]
+            # 必须要有username=rong的Cookie才能进行路由
+            #- Cookie=username,rong
+            # 请求头匹配，请求头要有X-Request_Id属性，并且值为整数
+            #- Header=X-Request-Id,\d+
+          # 过滤器
+          #filters:
+            # 过滤器工厂会在匹配的请求头上加上一对请求头,属性名、值，如下所示
+            #- AddRequestHeader=X-Request-color, blue
+
+
+# 也可以把网关注册到Eureka上
+# 把微服务注册到Eureka上
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  # 指定实例名称，一般用微服务的名称
+  instance:
+    instance-id: ${spring.application.name}
+    # 访问路径可以显示IP地址
+    prefer-ip-address: true
+    # 设置发送心跳间隔,默认是30秒，以下设置仅为测试用
+    lease-renewal-interval-in-seconds: 1
+    # Eureka服务端最后一次接收到心跳的最大间隔，默认90秒，超时将删除该服务
+    lease-expiration-duration-in-seconds: 2

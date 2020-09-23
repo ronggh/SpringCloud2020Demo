@@ -25,6 +25,8 @@
         <module>cloud-config-client-3355</module>
         <module>sleuth-provider-5001</module>
         <module>sleuth-consume-5501</module>
+        <module>gateway-9500</module>
+        <module>zuul-9200</module>
     </modules>
 
     <!-- 统一管理版本 -->

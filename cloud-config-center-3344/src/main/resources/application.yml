@@ -11,7 +11,10 @@ spring:
           # 使用第一种方式会访问不到git
           #uri: git@https://github.com/ronggh/spring-cloud-config-center.git
           uri: https://github.com/ronggh/spring-cloud-config-center.git
-          # 搜索目录
+          # 如果是私有仓库，可以使用用户名和密码方式访问
+          # username: xxx
+          # password: xxx
+          # 搜索目录，要与建的仓库名称一致
           search-paths:
             - spring-cloud-config-center
       # 读取分支

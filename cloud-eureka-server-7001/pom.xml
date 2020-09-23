@@ -26,7 +26,7 @@
 
         </dependency>
 
-        <!-- spring boot web,注意 groupId 不同-->
+        <!-- spring boot web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

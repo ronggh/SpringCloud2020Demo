@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * @author: rong
  * 实现配置中心变更后可以动态刷新
  * 1、pom.xml中引入<br/>
- * <!-- spring boot 性能监控,除了网关不能加这个，其它微服务最好加上 -->
+ * <!-- spring boot图形化监控,除了网关不能加这个，其它微服务最好加上 -->
  * <dependency>
  * <groupId>org.springframework.boot</groupId>
  * <artifactId>spring-boot-starter-actuator</artifactId>
@@ -30,8 +31,19 @@ public class ConfigController {
     @Value("${config.info}")
     private String configInfo;
 
+    @Value("${spring.application.name}")
+    private String appName;
+    @Value("${server.port}")
+    private Integer port;
+
+
     @GetMapping("/configInfo")
     public String getConfigInfo() {
         return configInfo;
+    }
+
+    @GetMapping("/applicationInfo")
+    public String getApplicationInfo() {
+        return "微服务名称：" + appName + "\t端口号：" + port;
     }
 }
