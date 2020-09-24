@@ -34,6 +34,20 @@ spring:
           #filters:
             # 过滤器工厂会在匹配的请求头上加上一对请求头,属性名、值，如下所示
             #- AddRequestHeader=X-Request-color, blue
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                # 使用SpEL从容器中获取对象
+#                key-resolver: '#{@pathKeyResolver}'
+#                # 令牌桶每秒填充平均速率
+#                redis-rate-limiter.replenishRate: 1
+#                # 令牌桶的总容量
+#                redis-rate-limiter.burstCapacity: 3
+
+# 令牌桶限流使用Redis
+#redis:
+#  host: localhost
+#  port: 6379
 
 
 # 也可以把网关注册到Eureka上
