@@ -20,13 +20,13 @@
         <module>cloud-provider-payment-zk-8004</module>
         <module>cloud-provider-payment-consul-8006</module>
         <module>cloud-consume-order-consul-9006</module>
-        <module>cloud-consume-order-feign-9007</module>
         <module>cloud-config-center-3344</module>
         <module>cloud-config-client-3355</module>
         <module>sleuth-provider-5001</module>
         <module>sleuth-consume-5501</module>
         <module>gateway-9500</module>
         <module>zuul-9200</module>
+        <module>OpenfeignOrder-9002</module>
     </modules>
 
     <!-- 统一管理版本 -->
