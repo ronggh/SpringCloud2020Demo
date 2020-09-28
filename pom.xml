@@ -27,6 +27,8 @@
         <module>gateway-9500</module>
         <module>zuul-9200</module>
         <module>OpenfeignOrder-9002</module>
+        <module>HystrixPayment-8501</module>
+        <module>HystrixOrder-8601</module>
     </modules>
 
     <!-- 统一管理版本 -->

@@ -23,7 +23,7 @@ feign:
   client:
     config:
       ## 自定义的 FeginClient的名称
-      feignName:
+      OpenfeignOrder:
         #连接超时
         connectTimeout: 5000
         readTimeout: 5000
