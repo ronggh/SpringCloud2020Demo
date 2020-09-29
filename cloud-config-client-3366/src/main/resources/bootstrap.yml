@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 spring:
   application:
     name: cloud-config-client
@@ -15,12 +15,12 @@ spring:
       # http://localhost:3344/master/config-dev.yml来获取配置信息
       # 3344是配置中心的服务端，会从github获取配置
       uri: http://localhost:3344
-  # rabbbit MQ 配置
-  rabbitmq:
-      host: localhost
-      port: 5672
-      username: guest
-      password: guest
+# rabbbit MQ 配置
+rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 # 暴露监控端点，可以被spring-boot-starter-actuator监控到变化
 management:

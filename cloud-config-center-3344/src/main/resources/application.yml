@@ -19,8 +19,15 @@ spring:
             - spring-cloud-config-center
       # 读取分支
       label: master
-# 服务注册到Eureka
-#eukera:
-#  client:
-#    service-url:
-#      default-zone: http://localhost:7001/eureka
+  # rabbbit MQ 配置
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

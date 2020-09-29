@@ -33,6 +33,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
+        <!-- spring cloud bus RabbitMQ 支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
     </dependencies>
 
 

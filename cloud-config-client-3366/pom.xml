@@ -9,15 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-config-center-3344</artifactId>
-
+    <artifactId>cloud-config-client-3366</artifactId>
     <dependencies>
+        <!-- spring cloud config -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
         <!-- spring boot web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- spring boot 监控 -->
+        <!-- spring boot 性能监控,除了网关不能加这个，其它微服务最好加上 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -28,24 +32,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
-        <!-- config server-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-
         <!-- spring cloud bus RabbitMQ 支持 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
-        <!-- lombok注解.setter/getter等 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
+    </dependencies>
 
 </project>
