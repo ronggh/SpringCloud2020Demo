@@ -32,6 +32,8 @@
         <module>HystrixOrder-8601</module>
         <module>HystrixDashboard-8701</module>
         <module>stream-provider-6001</module>
+        <module>stream-consume-6601</module>
+        <module>stream-consume-6602</module>
 
     </modules>
 

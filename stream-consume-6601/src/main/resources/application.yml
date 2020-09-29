@@ -1,8 +1,8 @@
 server:
-  port: 6001
+  port: 6601
 spring:
   application:
-    name: stream-provider
+    name: stream-consume
   cloud:
     # stream 配置
     stream:
@@ -17,10 +17,11 @@ spring:
                 username: guest
                 password: guest
       bindings: # 服务的整合处理
-        output: # 这个名字是一个通道的名称
+        input: # 这个名字是一个通道的名称
           destination: studyExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
           binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+          group: groupA # 设置分组，同一个分组是竞争关系，只有其中一个接收者可以消费
 
 #eureka:
 #  client: # 客户端进行Eureka注册的配置
@@ -29,7 +30,7 @@ spring:
 #  instance:
 #    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
 #    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
-#    instance-id: send-6001  # 在信息列表时显示主机名称
+#    instance-id: receiver-6601  # 在信息列表时显示主机名称
 #    prefer-ip-address: true     # 访问的路径变为IP地址
 
 
