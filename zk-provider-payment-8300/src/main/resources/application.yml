@@ -1,0 +1,14 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: zk-provider-payment
+  cloud:
+    # 注册到ZK
+    zookeeper:
+      connect-string: localhost:2181
+#      discovery:
+#        enabled: true
+#        instance-host: localhost
+#        instance-port: ${server.port}
+        #instance-id: ${spring.application.name}

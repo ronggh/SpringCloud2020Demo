@@ -13,27 +13,49 @@
 
     <!-- 各个模块 -->
     <modules>
+        <!-- basic module -->
+        <module>cloud-common</module>
         <module>cloud-provider-payment-8001</module>
         <module>cloud-consume-order-8002</module>
-        <module>cloud-common</module>
+
+        <!-- eureka server -->
         <module>cloud-eureka-server-7001</module>
-        <module>cloud-provider-payment-zk-8004</module>
-        <module>cloud-provider-payment-consul-8006</module>
-        <module>cloud-consume-order-consul-9006</module>
+
+        <!-- consul -->
+        <module>consul-provider-payment-8100</module>
+        <module>consul-consume-order-8200</module>
+
+        <!-- zookeeper -->
+        <module>zk-provider-payment-8300</module>
+        <module>zk-consume-order-8400</module>
+
+
+        <!-- config server & client -->
         <module>cloud-config-center-3344</module>
         <module>cloud-config-client-3355</module>
         <module>cloud-config-client-3366</module>
+
+        <!-- sleuth -->
         <module>sleuth-provider-5001</module>
         <module>sleuth-consume-5501</module>
+
+        <!-- zuul and gateway -->
         <module>gateway-9500</module>
         <module>zuul-9200</module>
+
+        <!-- openfeign -->
         <module>OpenfeignOrder-9002</module>
+
+        <!-- Hystrix -->
         <module>HystrixPayment-8501</module>
         <module>HystrixOrder-8601</module>
         <module>HystrixDashboard-8701</module>
+
+        <!-- stream -->
         <module>stream-provider-6001</module>
         <module>stream-consume-6601</module>
         <module>stream-consume-6602</module>
+
 
     </modules>
 

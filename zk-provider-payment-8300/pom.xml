@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>SpringCloud2020Demo</artifactId>
+        <groupId>cn.alan.cloud</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>zk-provider-payment-8300</artifactId>
+
+    <dependencies>
+        <!-- spring cloud 整合了 ZooKeeper,作为注册发现中心 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+            <!-- 排除自带的ZK版本-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 引入与服务器版本一致的ZK -->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.9</version>
+
+        </dependency>
+        <!-- 解决日志包冲突 -->
+        <!--<dependency>-->
+            <!--<groupId>ch.qos.logback</groupId>-->
+            <!--<artifactId>logback-classic</artifactId>-->
+            <!--<version>1.2.3</version>-->
+        <!--</dependency>-->
+
+
+        <!-- spring boot web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
